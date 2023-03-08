@@ -1,1 +1,7 @@
-# Visualizacion_Cantarovici_Reyes
+# Repo Visualizacion
+
+
+- ### Alumos: Nicolas Cantarovici y Florian Reyes
+
+
+
