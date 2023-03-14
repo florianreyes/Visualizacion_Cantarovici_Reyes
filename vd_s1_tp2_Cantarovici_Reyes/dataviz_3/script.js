@@ -1,36 +1,42 @@
-// d3.csv('data2000.csv', d3.autoType).then(data => {
-//   console.log(data)
-//   // Guardamos el svg generado en la variable chart
-//   const chart = Plot.plot({
-//   width,
-//   x: {axis: "top", tickFormat: "s"},
-//   color: {scheme: "spectral", domain: ocupacion},
-//   marks: [
-//     Plot.barX(stateages, {
-//       y: "mision_hs",
-//       x: "nacionalidad",
-//       fill: "ocupacion",
-//       sort: {y: "y", reverse: true}
-//     }),
-//     Plot.ruleX([0])
-//   ]
-// })
-//   // Agregamos chart al div#chart de index.html
-//   d3.select('#chart').append(() => chart)
-// })
+d3.csv("astronautas.csv", d3.autoType).then((data) => {
+  console.log(data);
 
-// const rows = csv.split('\n');
-// const headers = rows[0].split(',');
-// const data = rows.slice(1).map(row => {
-//   const values = row.split(',');
-//   return headers.reduce((obj, key, i) => ({ ...obj, [key]: values[i] }), {});
-// });
+  const dataGroupedCountry = Array.from(
+    d3.group(data, (d) => d.nacionalidad),
+    ([key, value]) => {
+      return {
+        nacionalidad: key,
+        mision_hs: d3.sum(value, (d) => d.mision_hs),
+        eva_mision: d3.sum(value, (d) => d.eva_mision_hs),
+      };
+    }
+  );
 
-// const result = Object.values(data.reduce((acc, { nombre, nacionalidad, ocupacion }) => {
-//   if (!acc[nacionalidad]) acc[nacionalidad] = {};
-//   if (!acc[nacionalidad][ocupacion]) acc[nacionalidad][ocupacion] = new Set();
-//   acc[nacionalidad][ocupacion].add(nombre);
-//   return acc;
-// }, {})).flatMap(nac => Object.entries(nac).map(([ocup, set]) => [Object.keys(nac)[0], ocup, set.size]));
+  console.log(dataGroupedCountry);
 
-// console.log(result);
+  let chart = Plot.plot({
+    marks: [
+      Plot.dot(dataGroupedCountry, {
+        x: "nacionalidad",
+        y: "mision_hs",
+        r: "eva_mision",
+      }),
+    ],
+    x: {
+      grid: true,
+      line: true,
+      zero: true,
+      nice: true,
+    },
+    y: { grid: true, line: true, zero: true, nice: true },
+    //Preguntar si es mentir con datos
+    r: { range: [1, 40] },
+    width: 1000,
+    height: 500,
+    marginLeft: 100,
+    marginBottom: 60,
+  });
+
+  // Agregamos chart al div#chart de index.html
+  d3.select("#chart").append(() => chart);
+});
