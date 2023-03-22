@@ -10,7 +10,6 @@ d3.csv("astronautas.csv").then(function (data) {
   //   }
   // );
 
-
   let chart = Plot.plot({
     marks: [
       Plot.barY(
@@ -22,20 +21,21 @@ d3.csv("astronautas.csv").then(function (data) {
             y: "mision_hs",
             fill: "genero",
             fillOpacity: 0.5,
-            thresholds: 10
+            thresholds: 10,
           }
         )
-      )
+      ),
     ],
+    y: { grid: true },
     marginLeft: 100,
     width: 508,
     height: 300,
-    color:{
+    color: {
       legend: true,
       // another color scheme
-      scheme: "reds"
-    }
-  })
+      scheme: "reds",
+    },
+  });
 
   // Agregamos chart al div#chart de index.html
   d3.select("#chart").append(() => chart);
