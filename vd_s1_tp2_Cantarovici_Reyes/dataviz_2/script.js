@@ -27,7 +27,7 @@ d3.csv("astronautas.csv").then(function (data) {
             title: (d) => `${d.nacionalidad} - ${d.genero}: ${d.count}`,
           }
         )
-      )
+      ),
     ],
     width: 1000,
     height: 500,
