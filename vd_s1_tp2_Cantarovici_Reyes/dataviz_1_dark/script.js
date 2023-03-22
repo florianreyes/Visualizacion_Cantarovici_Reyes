@@ -23,7 +23,7 @@ d3.csv("astronautas.csv", d3.autoType).then((data) => {
             {
               x: "anio_mision",
               y: "mision_hs",
-              fill: "black",
+              fill: "white",
               r:6,
               fillOpacity: 0.5,
               thresholds: 10
@@ -38,7 +38,16 @@ d3.csv("astronautas.csv", d3.autoType).then((data) => {
     height: 500,
     style:{
       "font-size": "14px",
-      "font-family" : "andale mono, courier new, monospace"
+      "font-family" : "andale mono, courier new, monospace",
+      "color": "white",
+      "background-color": "black",
+      ".xgrid line, .ygrid line": {
+        stroke: "white"
+      }
+    },
+    
+    color: {
+
     },
     marginBottom: 50,
     marginTop: 50,

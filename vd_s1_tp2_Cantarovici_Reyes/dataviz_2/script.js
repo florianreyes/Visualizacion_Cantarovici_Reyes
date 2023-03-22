@@ -22,7 +22,7 @@ d3.csv("astronautas.csv").then(function (data) {
             y: "count",
 
             fill: "genero",
-            fillOpacity: 0.5,
+            fillOpacity: 0.8,
             thresholds: 10,
             title: (d) => `${d.nacionalidad} - ${d.genero}: ${d.count}`,
           }
@@ -31,16 +31,23 @@ d3.csv("astronautas.csv").then(function (data) {
     ],
     width: 1000,
     height: 500,
+    // make the label bold
+    y:{grid:true},
     style:{
-      "font-size": "18px",
+      "font-size": "14px",
+      "font-family" : "andale mono, courier new, monospace",
     },
+    marginBottom: 50,
+
+
     color: {
       legend: true,
       scheme: "reds",
-      // make the legend text bigger
-      style: {
-        "font-size": "18px",
-      }
+      style:{
+        "font-size": "14px",
+        "font-family" : "andale mono, courier new, monospace"
+      },
+  
     },
     // show only the ticks that are EE.UU. or Russia
     x: {
