@@ -1,41 +1,54 @@
 d3.csv("astronautas.csv").then(function (data) {
-  // Group the astronauts by nationality and count the number of astronauts in each group
-  // const yearData = Array.from(
-  //   d3.group(data, (d) => d.anio_mision),
-  //   ([key, value]) => {
-  //     return {
-  //       anio_mision: key,
-  //       edad_mision: d3.mean(value, (d) => d.edad_mision),
-  //     };
-  //   }
-  // );
 
+  const counts = new Map();
+  data.forEach((d) => {
+    const key = `${d.nacionalidad}-${d.genero}`;
+    counts.set(key, (counts.get(key) || 0) + 1);
+  });
+
+  const groupedData = Array.from(counts).map(([key, count]) => {
+    const [nacionalidad, genero] = key.split("-");
+    return { nacionalidad, genero, count };
+  });
 
   let chart = Plot.plot({
     marks: [
       Plot.barY(
-        data,
+        groupedData,
         Plot.groupX(
           { y: "sum" },
           {
-            x: "genero",
-            y: "mision_hs",
+            x: "nacionalidad",
+            y: "count",
+
             fill: "genero",
             fillOpacity: 0.5,
-            thresholds: 10
+            thresholds: 10,
+            title: (d) => `${d.nacionalidad} - ${d.genero}: ${d.count}`,
           }
         )
       )
     ],
-    marginLeft: 100,
-    width: 508,
-    height: 300,
-    color:{
+    width: 1000,
+    height: 500,
+    style:{
+      "font-size": "18px",
+    },
+    color: {
       legend: true,
-      // another color scheme
-      scheme: "reds"
+      scheme: "reds",
+      // make the legend text bigger
+      style: {
+        "font-size": "18px",
+      }
+    },
+    // show only the ticks that are EE.UU. or Russia
+    x: {
+      tickFormat: (d) => (d === "EE.UU." || d === "U.S.S.R/Rusia" ? d : null),
     }
-  })
+
+
+  });
 
   // Agregamos chart al div#chart de index.html
   d3.select("#chart").append(() => chart);
