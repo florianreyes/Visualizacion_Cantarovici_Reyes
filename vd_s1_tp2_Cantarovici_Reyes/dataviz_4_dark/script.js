@@ -11,9 +11,6 @@ d3.csv("astronautas.csv", d3.autoType).then((data) => {
             y: "mision_hs",
             fill: "ocupacion",
             fillOpacity: 0.8,
-            thresholds: 10,
-            // make a title for each bar
-
             title: (d) => `${d.ocupacion}`,
             
           }
@@ -28,22 +25,27 @@ d3.csv("astronautas.csv", d3.autoType).then((data) => {
     line: true,
     zero: true,
     nice: true,
-    width: 1000,
+    width: 1200,
     height: 500,
     marginLeft: 100,
     marginBottom: 60,
     marginTop: 40,
+    x: {},
+    style:{"background-color": "black",
+    "color": "white", 
+    "font-family" : "andale mono, courier new, monospace","font-size": "14px", "margin-top": "30px", "margin-right": "50px"},
     color: {
       legend: true,
       marginBottom: 30,
       marginBottom: 30,
       style:{
         "font-size": "14px",
-        "font-family" : "andale mono, courier new, monospace"
+        "font-family" : "andale mono, courier new, monospace",
+        "color" : "white",
       },
     },
     
   });
-  // Agregamos chart al div#chart de index.html
+
   d3.select("#chart").append(() => chart);
 });

@@ -1,0 +1,44 @@
+/* import custom font */
+@font-face {
+    font-family: "nippo";
+    src: url("/Users/nico/Desktop/Ditella/Año 3/Semestre 1/Visualizacion/Visualizacion_Cantarovici_Reyes/vd_s1_tp2_Cantarovici_Reyes/fonts/Satoshi-Regular.otf") format("otf");
+}
+
+.text{
+    margin-top: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #060606;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+.title{
+    /* font-size: 20px; */
+    font-weight: bold;
+    font-family : "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
+    color: #d9d9d9;
+    text-align: center;    
+}
+.nombres{
+    font-size: 16px;
+    font-family : "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
+    color: #9f9f9f;
+}
+
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #060606;
+
+}

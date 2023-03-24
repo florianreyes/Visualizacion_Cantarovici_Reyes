@@ -35,6 +35,8 @@ d3.csv("astronautas.csv").then(function (data) {
     style:{
       "font-size": "14px",
       "font-family" : "andale mono, courier new, monospace",
+      "color": "white",
+      "background-color": "black",
     },
     marginBottom: 50,
 
@@ -44,7 +46,8 @@ d3.csv("astronautas.csv").then(function (data) {
       scheme: "reds",
       style:{
         "font-size": "14px",
-        "font-family" : "andale mono, courier new, monospace"
+        "font-family" : "andale mono, courier new, monospace",
+        "color" : "white",
       },
   
     },
