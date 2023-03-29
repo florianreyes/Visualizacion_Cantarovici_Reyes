@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Viz_1</title>
+    <title>Viz_2</title>
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <link rel="stylesheet" href="styles.css"/>
     <style>
@@ -13,18 +13,35 @@
             overflow-y: auto;
         }
 
-        #chart svg {
-            max-width: initial;
-        }
+        /* #chart svg {
+            /* max-width: initial; 
+        } */
     </style>
 </head>
 
 <body>
-    <div class="text">
-        <h2 class="title">Cantidad de personas por pais dividido por genero</h2>
-        <h4 class="nombres">Nicolas Cantarovici - Florian Reyes</h4>
+    <a href="../index.html">
+        <img src="../assets/arrow.png" alt="">
+    </a>
+    
+
+    <div class="container_grafico">
+        <div class="text">
+            <h2 class="title">La brecha espacial</h2>
+            <h4 class="subtitle">Distribución de astronautas por nacionalidad y género en misiones espaciales</h4>
+        </div>
+        <div id="chart"></div>
+        <footer>
+                <div class="source">
+                <h4 class="source">Fuente: Astronautas.csv </h4>
+            </div>
+            <div class="firma">
+                <h4 class="nombres">Nicolas Cantarovici - Florian Reyes</h4>
+            </div>
+        </footer>
+    
     </div>
-    <div id="chart"></div>
+    
 
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
     <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6"></script>

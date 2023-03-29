@@ -22,7 +22,7 @@ d3.csv("astronautas.csv", d3.autoType).then((data) => {
   width: 1000,
   height: 500,
   marginBottom: 60,
-  marginTop: 60,
+  marginTop: 20,
   marginLeft: 150,
   style:{"background-color": "black",
     "color": "white","font-size": "14px",

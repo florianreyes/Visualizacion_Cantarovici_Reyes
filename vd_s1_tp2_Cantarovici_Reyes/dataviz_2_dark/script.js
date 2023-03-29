@@ -11,10 +11,13 @@ d3.csv("astronautas.csv").then(function (data) {
     return { nacionalidad, genero, count };
   });
 
+  data=groupedData.filter(d => ["U.S.S.R/Rusia","EE.UU.","China","Japon","Italia","Alemania","Canada","Reino Unido","Francia" ].includes(d["nacionalidad"]));
+
+
   let chart = Plot.plot({
     marks: [
       Plot.barY(
-        groupedData,
+        data,
         Plot.groupX(
           { y: "sum" },
           {
@@ -25,6 +28,8 @@ d3.csv("astronautas.csv").then(function (data) {
             fillOpacity: 0.8,
             thresholds: 10,
             title: (d) => `${d.nacionalidad} - ${d.genero}: ${d.count}`,
+            sort:{x:"y",reverse:true},
+            
           }
         )
       ),
@@ -51,10 +56,9 @@ d3.csv("astronautas.csv").then(function (data) {
       },
   
     },
-    // show only the ticks that are EE.UU. or Russia
-    x: {
-      tickFormat: (d) => (d === "EE.UU." || d === "U.S.S.R/Rusia" ? d : null),
-    }
+    // x: {
+    //   tickFormat: (d) => (d === "EE.UU." || d === "U.S.S.R/Rusia" ? d : null),
+    // }
 
 
   });

@@ -20,11 +20,26 @@
 </head>
 
 <body>
-    <div class="text">
-        <h2 class="title">Horas de mision por año</h2>
-        <h4 class="nombres">Nicolas Cantarovici - Florian Reyes</h4>
+    <a href="../index.html">
+        <img src="../assets/arrow.png" alt="">
+    </a>
+    
+    <div class="container_grafico">
+        <div class="text">
+            <h2 class="title">Boom espacial de 2016</h2>
+            <h4 class="subtitle">Duraciones de las Misiones de los Astronautas a lo Largo del Tiempo</h4>
+        </div>
+        <div id="chart"></div>
+        <footer>
+            <div class="source">
+            <h4 class="source">Fuente: Astronautas.csv </h4>
+        </div>
+        <div class="firma">
+            <h4 class="nombres">Nicolas Cantarovici - Florian Reyes</h4>
+        </div>
+        </footer> 
+    
     </div>
-    <div id="chart"></div>
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
     <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.contentWindow.js"></script>
