@@ -68,3 +68,39 @@ footer {
     font-family : "Supreme";
     color: #9f9f9f;
 }
+
+@media (max-width: 600px) {
+
+    a.back-button {
+        display: none;
+      }
+    /* Hide chart overflow for small screens */
+    #chart {
+      overflow-y: hidden;
+    }
+    
+    /* Adjust font sizes for small screens */
+    .text {
+      font-size: 16px;
+    }
+    .title {
+      font-size: 24px;
+    }
+    .subtitle {
+      font-size: 14px;
+    }
+    .nombres {
+      font-size: 14px;
+    }
+    
+    /* Adjust position of footer links for small screens */
+    footer {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    footer a {
+      position: static;
+      margin-bottom: 10px;
+    }
+  }
