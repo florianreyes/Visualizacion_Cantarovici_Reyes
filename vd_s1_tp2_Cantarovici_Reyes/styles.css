@@ -54,6 +54,9 @@
     border: 2px solid white;
     border-radius: 1rem;
     transition: all 0.3s ease-in-out;
+    width: 300px;
+    display: block;
+
   }
   
   nav a:hover {
