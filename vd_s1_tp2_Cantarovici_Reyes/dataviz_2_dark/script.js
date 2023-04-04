@@ -1,5 +1,4 @@
 d3.csv("astronautas.csv").then(function (data) {
-
   const counts = new Map();
   data.forEach((d) => {
     const key = `${d.nacionalidad}-${d.genero}`;
@@ -11,8 +10,19 @@ d3.csv("astronautas.csv").then(function (data) {
     return { nacionalidad, genero, count };
   });
 
-  data=groupedData.filter(d => ["U.S.S.R/Rusia","EE.UU.","China","Japon","Italia","Alemania","Canada","Reino Unido","Francia" ].includes(d["nacionalidad"]));
-
+  data = groupedData.filter((d) =>
+    [
+      "U.S.S.R/Rusia",
+      "EE.UU.",
+      "China",
+      "Japon",
+      "Italia",
+      "Alemania",
+      "Canada",
+      "Reino Unido",
+      "Francia",
+    ].includes(d["nacionalidad"])
+  );
 
   let chart = Plot.plot({
     marks: [
@@ -28,39 +38,39 @@ d3.csv("astronautas.csv").then(function (data) {
             fillOpacity: 0.8,
             thresholds: 10,
             title: (d) => `${d.nacionalidad} - ${d.genero}: ${d.count}`,
-            sort:{x:"y",reverse:true},
-            
+            sort: { x: "y", reverse: true },
           }
         )
       ),
     ],
     width: 1000,
     height: 500,
-    y:{grid:true},
-    style:{
+    style: {
       "font-size": "14px",
-      "font-family" : "andale mono, courier new, monospace",
-      "color": "white",
+      "font-family": "Supreme",
+      color: "white",
       "background-color": "black",
     },
     marginBottom: 50,
-
+    marginTop: 40,
 
     color: {
       legend: true,
       scheme: "reds",
-      style:{
+      style: {
         "font-size": "14px",
-        "font-family" : "andale mono, courier new, monospace",
-        "color" : "white",
+        "font-family": "Supreme",
+        color: "white",
       },
-  
     },
-    // x: {
-    //   tickFormat: (d) => (d === "EE.UU." || d === "U.S.S.R/Rusia" ? d : null),
-    // }
-
-
+    y: {
+      label: "Cantidad de astronautas",
+      grid: true,
+      line: true,
+      nice: true,
+      ticks: 7,
+    },
+    x: { label: "Nacionalidad", grid: true, line: true, nice: true },
   });
 
   // Agregamos chart al div#chart de index.html

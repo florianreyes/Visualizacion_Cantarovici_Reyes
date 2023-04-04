@@ -1,58 +1,58 @@
 d3.csv("astronautas.csv", d3.autoType).then((data) => {
   console.log(data);
   let chart = Plot.plot({
-  
-      marks: [
-        Plot.line(
-          data,
-          Plot.binX(
-            { y: "sum" },
-            {
-              x: "anio_mision",
-              y: "mision_hs",
-            
-              fillOpacity: 0.5,
-              thresholds: 10
-            }
-          )
-        ),
-        Plot.dot(
-          data,
-          Plot.binX(
-            { y: "sum" },
-            {
-              x: "anio_mision",
-              y: "mision_hs",
-              fill: "white",
-              r:6,
-              fillOpacity: 0.5,
-              thresholds: 10
-            }
-          )
+    marks: [
+      Plot.line(
+        data,
+        Plot.binX(
+          { y: "sum" },
+          {
+            x: "anio_mision",
+            y: "mision_hs",
+
+            fillOpacity: 0.5,
+            thresholds: 10,
+          }
         )
-  
-      ],
+      ),
+      Plot.dot(
+        data,
+        Plot.binX(
+          { y: "sum" },
+          {
+            x: "anio_mision",
+            y: "mision_hs",
+            // if the sum of mision_hs is greater than 70000, then fill with red, else grey
+            fill: (d) => (d.anio_mision == 2016 ? "red" : "grey"),
+            r: 6,
+            fillOpacity: 0.5,
+            thresholds: 10,
+          }
+        )
+      ),
+    ],
     x: { grid: true, line: true, zero: false, nice: true },
     y: { grid: true, line: true, zero: false, nice: true },
     width: 1000,
     height: 500,
-    style:{
+    style: {
       "font-size": "14px",
-      "font-family" : "andale mono, courier new, monospace",
-      "color": "white",
+      "font-family": "Supreme",
+      color: "white",
       "background-color": "black",
-      ".xgrid line, .ygrid line": {
-        stroke: "white"
-      }
     },
-    
-    color: {
 
-    },
+    color: {},
     marginBottom: 50,
     marginTop: 50,
     marginLeft: 75,
-    
+    y: {
+      label: "Suma de horas de mision",
+      grid: true,
+      line: true,
+      nice: true,
+    },
+    x: { label: "Años", grid: true, line: true, nice: true },
   });
 
   // Agregamos chart al div#chart de index.html

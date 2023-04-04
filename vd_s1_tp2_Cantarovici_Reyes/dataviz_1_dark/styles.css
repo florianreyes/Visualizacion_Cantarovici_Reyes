@@ -12,6 +12,9 @@
     color: #060606;
     text-align: left;
 }
+#chart {
+  margin-top: -20px;
+}
 
 .title{
     font-size: 32px;
