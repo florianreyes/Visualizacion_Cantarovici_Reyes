@@ -1,13 +1,13 @@
-# [TP2: Visualización de Datos - Astronautas que participaron en misiones espaciales 🚀][https://github.com/florianreyes/Visualizacion_Cantarovici_Reyes]
+# [TP2: Visualización de Datos - Astronautas que participaron en misiones espaciales 🚀](https://github.com/florianreyes/Visualizacion_Cantarovici_Reyes)
 
 ## Integrantes
-**[Nicolás Cantarovici][https://github.com/nicocanta20] 🧑🏼‍🚀**
-**[Florian Reyes][https://github.com/florianreyes] 🧑🏼‍🚀**
+- [Nicolás Cantarovici 🧑🏼‍🚀](https://github.com/nicocanta20) 
+- [Florian Reyes 🧑🏼‍🚀](https://github.com/florianreyes)
 
 ## Introducción
 En el trabajo, se busca explorar y analizar el conjunto de datos de astronautas que participaron en misiones espaciales a través del diseño de distintas visualizaciones. El objetivo es familiarizarse con la librería de visualización Plot.js.
 
-## [Dataset 💾][https://github.com/visualizacion-de-datos-utdt/vd_astronautas]
+## [Dataset 💾](https://github.com/visualizacion-de-datos-utdt/vd_astronautas)
 El conjunto de datos astronautas.csv contiene información sobre astronautas que participaron en misiones espaciales desde 2010 hasta 2020. Contiene 158 registros, en donde cada fila representa un astronauta participante de una misión espacial. Los campos incluyen nombre, género, año de nacimiento, nacionalidad, estatus militar o civil, título profesional, año de la misión, edad del astronauta cuando realizó la misión, duración de la misión en horas y duración de las actividades extravehiculares (EVA) en horas.
 
 ## Decisiones de Diseño 🎨
