@@ -1,5 +1,7 @@
 # [TP2: Visualización de Datos - Astronautas que participaron en misiones espaciales 🚀](https://github.com/florianreyes/Visualizacion_Cantarovici_Reyes)
 
+## [Proyecto hosteado](https://astronautas-cantarovici-reyes.vercel.app/)
+
 ## Integrantes
 - [Nicolás Cantarovici 🧑🏼‍🚀](https://github.com/nicocanta20) 
 - [Florian Reyes 🧑🏼‍🚀](https://github.com/florianreyes)
