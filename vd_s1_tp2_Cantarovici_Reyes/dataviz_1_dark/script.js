@@ -31,8 +31,6 @@ d3.csv("astronautas.csv", d3.autoType).then((data) => {
         )
       ),
     ],
-    x: { grid: true, line: true, zero: false, nice: true },
-    y: { grid: true, line: true, zero: false, nice: true },
     width: 1000,
     height: 500,
     style: {
@@ -51,8 +49,9 @@ d3.csv("astronautas.csv", d3.autoType).then((data) => {
       grid: true,
       line: true,
       nice: true,
+      tickFormat: d3.format("~s")
     },
-    x: { label: "Años", grid: true, line: true, nice: true },
+    x: { label: "Años", grid: true, line: true, nice: true, tickFormat: d3.format("~f") },
   });
 
   // Agregamos chart al div#chart de index.html

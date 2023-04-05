@@ -71,7 +71,7 @@ footer {
     font-family : "Supreme";
     color: #9f9f9f;
     padding-left: 40px;
-    padding-right: 40px;
+    padding-right: 12%;
 }
 
 @media (max-width: 600px) {
@@ -95,6 +95,9 @@ footer {
       font-size: 14px;
     }
     .nombres {
+      font-size: 14px;
+    }
+    .source{
       font-size: 14px;
     }
     

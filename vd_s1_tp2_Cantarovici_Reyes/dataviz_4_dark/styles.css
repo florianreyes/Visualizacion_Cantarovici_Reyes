@@ -12,6 +12,8 @@
     text-align: left;
     margin-left: 40px;
     padding: 0px;
+    
+
 }
 
 .title{
@@ -29,7 +31,17 @@
     color: #c4c2c2;
     text-align: left;
     margin-top: -20px;
+    /* padding-right: 20%; */
 }
+
+.subtitle strong{
+  color:red;
+}
+
+.subtitle span{
+  color:grey;
+}
+
 .nombres{
     font-size: 18px;
     font-family : "Supreme",
@@ -93,6 +105,7 @@ footer {
     margin-left: 40px;
 }
 
+
 @media (max-width: 600px) {
 
     a.back-button {
@@ -114,6 +127,9 @@ footer {
       font-size: 14px;
     }
     .nombres {
+      font-size: 14px;
+    }
+    .source{
       font-size: 14px;
     }
     

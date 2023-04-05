@@ -25,6 +25,7 @@ d3.csv("astronautas.csv", d3.autoType).then((data) => {
             y: "mision_hs",
             fill: (d) =>
               d.ocupacion == "ingeniero aeroespacial" ? "red" : "grey",
+
             fillOpacity: 0.8,
             title: (d) => `${d.ocupacion}`,
             sort: { x: "y", reverse: true },
@@ -32,6 +33,7 @@ d3.csv("astronautas.csv", d3.autoType).then((data) => {
           }
         )
       ),
+      
     ],
     style: {
       "font-size": "14px",
@@ -56,7 +58,6 @@ d3.csv("astronautas.csv", d3.autoType).then((data) => {
     },
     color: {
       legend: true,
-      marginBottom: 30,
       style: {
         "font-size": "14px",
         "font-family": "Supreme",
@@ -67,8 +68,10 @@ d3.csv("astronautas.csv", d3.autoType).then((data) => {
       round: true,
       label: "Nacionalidad",
       tickRotate: 0,
+      
     },
-    y: { ticks: 5 },
+    y: { ticks: 5,
+      label: "Horas en mision" ,tickFormat:d3.format('~s')},
   });
 
   d3.select("#chart").append(() => chart);

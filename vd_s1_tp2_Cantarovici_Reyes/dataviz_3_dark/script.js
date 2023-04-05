@@ -22,7 +22,9 @@ d3.csv("astronautas.csv", d3.autoType).then((data) => {
     fy: {
       axis: "left",
     },
-    x: { grid: true },
+    x: { grid: true, label: "Horas en mision",nice: true },
+    y: {nice: true },
+  
     width: 1000,
     height: 500,
     marginBottom: 60,

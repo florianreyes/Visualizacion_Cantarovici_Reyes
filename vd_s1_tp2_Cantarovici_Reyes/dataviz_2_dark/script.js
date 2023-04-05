@@ -41,7 +41,7 @@ d3.csv("astronautas.csv").then(function (data) {
             sort: { x: "y", reverse: true },
           }
         )
-      ),
+      )
     ],
     width: 1000,
     height: 500,

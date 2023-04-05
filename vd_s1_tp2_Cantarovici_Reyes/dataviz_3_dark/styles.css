@@ -33,6 +33,7 @@
     color: #c4c2c2;
     text-align: left;
     margin-top: -20px;
+    padding-right: 20%;
 }
 .nombres{
     font-size: 18px;
@@ -95,6 +96,9 @@ footer {
       font-size: 14px;
     }
     .nombres {
+      font-size: 14px;
+    }
+    .source{
       font-size: 14px;
     }
     
